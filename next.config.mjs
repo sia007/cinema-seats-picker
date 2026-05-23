@@ -1,12 +1,9 @@
-const { composePlugins, withNx } = require('@nx/next');
-
-const repo = "YOUR_REPO_NAME";
+const repo = "cinema-seats-picker";
 
 const nextConfig = {
-  output: 'export',
-  basePath: '/cinema-seats-picker',
-  assetPrefix: '/cinema-seats-picker',
-  distDir: '/cinema-seats-picker'
+  output: "export",
+  basePath: `/${repo}`,
+  assetPrefix: `/${repo}/`,
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -18,12 +15,4 @@ const nextConfig = {
   },
 };
 
-/**
- * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
- **/
-
-const plugins = [
-  // Add more Next.js plugins to this list if needed.
-  withNx,
-];
-module.exports = composePlugins(...plugins)(nextConfig);
+export default nextConfig;
